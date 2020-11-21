@@ -232,6 +232,7 @@
     * [03 Uwsgi](01-Python/11-三方/03-uwsgi.md)
     * [04 Paramiko](01-Python/11-三方/04-paramiko.md)
     * [05 Pexpect](01-Python/11-三方/05-pexpect.md)
+    * [06 Pycrypto](01-Python/11-三方/06-pycrypto.md)
   - 12-项目
     - 01-系统监控
       * [01-cpu与内存](01-Python/12-项目/01-系统监控/01-cpu与内存.md)
