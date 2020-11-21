@@ -1,0 +1,14 @@
+{
+    "title": "book",
+    "theme-default": {
+        "showLevel": true
+    },
+    "plugins":[
+        "expandable-chapters-small",
+        "back-to-top-button",
+        "chapter-fold",
+        "splitter",
+        "prism", "-highlight",
+        "pageview-count"
+    ]
+}
