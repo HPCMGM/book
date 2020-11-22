@@ -2,10 +2,9 @@
 
 1. 到官网下载`instantclient-basic`: https://www.oracle.com/cn/database/technologies/instant-client/downloads.html
 2. 这里提供了版本: `11.2.0.4.0`的文件
-   * [instantclient-basic-linux.x64-11.2.0.4.0](image/20-oracle-%E5%AE%89%E8%A3%85/instantclient-basic-linux.x64-11.2.0.4.0.zip)
-   * [instantclient-basic-windows.x64-11.2.0.4.0](image/20-oracle-%E5%AE%89%E8%A3%85/instantclient-basic-windows.x64-11.2.0.4.0.zip)
-   * [instantclient-sdk-linux.x64-11.2.0.4.0](image/20-oracle-%E5%AE%89%E8%A3%85/instantclient-sdk-linux.x64-11.2.0.4.0.zip)
-   * [instantclient-sqlplus-linux.x64-11.2.0.4.0](image/20-oracle-%E5%AE%89%E8%A3%85/instantclient-sqlplus-linux.x64-11.2.0.4.0.zip)
+
+   链接：https://pan.baidu.com/s/1g2lJiEKLr3jzVbq2naXLTA 
+   提取码：hpcm 
 
 ### 2. 部署环境
 
