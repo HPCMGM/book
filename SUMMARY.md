@@ -180,6 +180,10 @@
     - [04 Re](01-Python/10-内置/04--re/README.md)
       * [01-正则规则](01-Python/10-内置/04--re/01-正则规则.md)
       * [02-正则匹配](01-Python/10-内置/04--re/02-正则匹配.md)
+    - 05 Shutil
+      * [01-文本目录](01-Python/10-内置/05-shutil/01-文本目录.md)
+      * [02-压缩](01-Python/10-内置/05-shutil/02-压缩.md)
+      * [REAMDE](01-Python/10-内置/05-shutil/REAMDE.md)
     * [01 Os](01-Python/10-内置/01-os.md)
     * [02 Sys](01-Python/10-内置/02-sys.md)
     * [03 Time](01-Python/10-内置/03-time.md)
@@ -190,7 +194,6 @@
     * [08 Random](01-Python/10-内置/08-random.md)
     * [09 Logging](01-Python/10-内置/09-logging.md)
     * [10 String](01-Python/10-内置/10-string.md)
-    * [11 Shutil](01-Python/10-内置/11-shutil.md)
     * [12 Collections](01-Python/10-内置/12-collections.md)
     * [13 Importlib](01-Python/10-内置/13-importlib.md)
     * [14 Xx](01-Python/10-内置/14-xx.md)
@@ -202,6 +205,7 @@
     * [22 Configparser](01-Python/10-内置/22-configparser.md)
     * [30 Gc](01-Python/10-内置/30-gc.md)
     * [31 Telnetlib](01-Python/10-内置/31-telnetlib.md)
+    * [32 Bisert](01-Python/10-内置/32-bisert.md)
   - 11-三方
     - [01 Win 32](01-Python/11-三方/01-win32/README.md)
       * [01-常用功能](01-Python/11-三方/01-win32/01-常用功能.md)
