@@ -184,6 +184,9 @@
       * [01-文本目录](01-Python/10-内置/05-shutil/01-文本目录.md)
       * [02-压缩](01-Python/10-内置/05-shutil/02-压缩.md)
       * [REAMDE](01-Python/10-内置/05-shutil/REAMDE.md)
+    - [06 Urllib](01-Python/10-内置/06-urllib/README.md)
+      * [01 Parse](01-Python/10-内置/06-urllib/01-parse.md)
+      * [02 Request](01-Python/10-内置/06-urllib/02-request.md)
     * [01 Os](01-Python/10-内置/01-os.md)
     * [02 Sys](01-Python/10-内置/02-sys.md)
     * [03 Time](01-Python/10-内置/03-time.md)
@@ -206,6 +209,7 @@
     * [30 Gc](01-Python/10-内置/30-gc.md)
     * [31 Telnetlib](01-Python/10-内置/31-telnetlib.md)
     * [32 Bisert](01-Python/10-内置/32-bisert.md)
+    * [33 Array](01-Python/10-内置/33-array.md)
   - 11-三方
     - [01 Win 32](01-Python/11-三方/01-win32/README.md)
       * [01-常用功能](01-Python/11-三方/01-win32/01-常用功能.md)
