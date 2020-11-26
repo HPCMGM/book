@@ -173,7 +173,7 @@
       * [03-线程锁](01-Python/10-内置/02-threading/03-线程锁.md)
       * [04-线程队列](01-Python/10-内置/02-threading/04-线程队列.md)
       * [10-终止线程](01-Python/10-内置/02-threading/10-终止线程.md)
-    - 03 Coroutine
+    - [03 Coroutine](01-Python/10-内置/03-coroutine/README.md)
       * [01-协程创建](01-Python/10-内置/03-coroutine/01-协程创建.md)
       * [02-协程池](01-Python/10-内置/03-coroutine/02-协程池.md)
       * [03-协程队列](01-Python/10-内置/03-coroutine/03-协程队列.md)
