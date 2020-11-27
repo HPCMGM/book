@@ -175,6 +175,7 @@
       * [10-终止线程](01-Python/10-内置/02-threading/10-终止线程.md)
     - [03 Coroutine](01-Python/10-内置/03-coroutine/README.md)
       * [01-原生协程创建](01-Python/10-内置/03-coroutine/01-原生协程创建.md)
+      * [02-asyncio-控制](01-Python/10-内置/03-coroutine/02-asyncio-控制.md)
       * [10-协程](01-Python/10-内置/03-coroutine/10-协程.md)
       * [11-协程队列](01-Python/10-内置/03-coroutine/11-协程队列.md)
       * [12-协程池](01-Python/10-内置/03-coroutine/12-协程池.md)
