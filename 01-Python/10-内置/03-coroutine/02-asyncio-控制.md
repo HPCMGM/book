@@ -194,3 +194,156 @@ hello
 world
 ```
 
+### 获取协程结果
+
+#### > as_completed
+
+实时返回协程结果, 需要用`await`接受结果. 如果在所有`future`完成前任务中出现了超时, 则会引发`asyncio.TimeoutError`异常
+
+````python
+def as_completed(fs, *, loop=None, timeout=None):
+return result_list
+````
+
+**示例**
+
+```python
+import asyncio
+
+async def test_as_completed(i):
+    await asyncio.sleep(1)
+    return i
+
+async def main():
+    for task in asyncio.as_completed([asyncio.create_task(test_as_completed(i)) for i in range(3)]):
+        res = await task
+        print(res)
+
+if __name__ == '__main__':
+    asyncio.run(main())
+```
+
+输出
+
+```python
+0
+1
+2
+```
+
+### 线程间调用
+
+#### > run_coroutine_threadsafe
+
+指定向特定的事件监听`loop`中提交一个协程, 此操作为线程安全的.
+
+```python
+def run_coroutine_threadsafe(coro, loop):
+return future
+```
+
+* coro: `coroutine`, 协程函数
+* loop: `loop`, 时间监听对象
+
+**示例**
+
+```python
+import asyncio
+import threading
+
+async def create_task(loop):
+    future = asyncio.run_coroutine_threadsafe(production(1), loop)
+    try:
+        result = future.result(3)
+    except asyncio.TimeoutError:
+        print('The coroutine took too long, cancelling the task...')
+        future.cancel()
+    except Exception as exc:
+        print(f'The coroutine raised an exception: {exc!r}')
+    else:
+        print(f'The coroutine returned: {result!r}')
+    await asyncio.sleep(1)
+
+async def production(i):
+    print("{}第{}个coroutine任务".format(threading.current_thread(), i))
+    await asyncio.sleep(1)
+    return i
+
+son_loop = asyncio.new_event_loop()
+# 让线程3秒后终止
+run_loop_thread = threading.Thread(target=son_loop.run_until_complete, args=(asyncio.wait([asyncio.sleep(2)]), ))
+run_loop_thread.start()
+
+asyncio.run(create_task(son_loop)) # 向其他事件循环loop中, 插入协程
+asyncio.run(production(2)) # 当前事件中执行该函数
+```
+
+输出
+
+```python
+<Thread(Thread-1, started 31340)>第1个coroutine任务
+The coroutine returned: 1
+<_MainThread(MainThread, started 24144)>第2个coroutine任务
+```
+
+
+
+### 获取当前任务信息
+
+#### > current_task
+
+获取当前运行协程的`task`对象. 如果没有`task`任务, 则会返回`None`.
+
+```python
+def current_task(loop=None):
+return task/None
+```
+
+* loop: `loop`, 事件监听对象.
+
+**示例**
+
+```python
+
+```
+
+输出
+
+```python
+
+```
+
+#### > all_task
+
+获取当前事件监听对象中的全部任务
+
+```python
+def all_task(loop=None):
+return list
+```
+
+* loop: `loop`, 事件监听对象.
+
+**示例**
+
+```python
+
+```
+
+输出
+
+```python
+
+```
+
+#### > isfuture
+
+判断, `obj`是否为`Future`, `Task`或者携带`_asyncio_future_blocking`属性的对象.
+
+```python
+def isfuture(obj):
+return bool
+```
+
+* obj: `coroutine`, 协程对象.
+
