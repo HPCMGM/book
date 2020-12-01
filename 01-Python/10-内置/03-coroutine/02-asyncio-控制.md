@@ -40,7 +40,7 @@ async def test_shield(i):
 async def main():
     print("hello")
     try:
-        future = asyncio.shield(test_shield(2))
+        future = asyncio.ensure_future(asyncio.shield(test_shield(2)))
         print(future)
         future1 = asyncio.ensure_future(test_shield(3))
         future.cancel()
@@ -301,25 +301,13 @@ return task/None
 
 * loop: `loop`, 事件监听对象.
 
-**示例**
-
-```python
-
-```
-
-输出
-
-```python
-
-```
-
 #### > all_task
 
 获取当前事件监听对象中的全部任务
 
 ```python
 def all_task(loop=None):
-return list
+return set
 ```
 
 * loop: `loop`, 事件监听对象.
@@ -327,13 +315,34 @@ return list
 **示例**
 
 ```python
+import asyncio
 
+
+async def get_task_all():
+    print(asyncio.all_tasks())
+    await asyncio.sleep(1)
+
+
+async def get_task():
+    print(asyncio.current_task())
+    await asyncio.sleep(1)
+
+
+async def main():
+    task1 = asyncio.create_task(get_task())
+    task2 = asyncio.create_task(get_task_all())
+    await task1
+    await task2
+
+
+asyncio.run(main())
 ```
 
 输出
 
 ```python
-
+<Task pending coro=<get_task() running at E:/project/test/t_builtins/test1.py:15> cb=[<TaskWakeupMethWrapper object at 0x000001B1C8B13A98>()]>
+{<Task pending coro=<get_task() running at E:/project/test/t_builtins/test1.py:16> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x000001B1C8B79CD8>()]> cb=[<TaskWakeupMethWrapper object at 0x000001B1C8B13A98>()]>, <Task pending coro=<main() running at E:/project/test/t_builtins/test1.py:22> wait_for=<Task pending coro=<get_task() running at E:/project/test/t_builtins/test1.py:16> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x000001B1C8B79CD8>()]> cb=[<TaskWakeupMethWrapper object at 0x000001B1C8B13A98>()]> cb=[_run_until_complete_cb() at C:\Python\Python37\Lib\asyncio\base_events.py:158]>, <Task pending coro=<get_task_all() running at E:/project/test/t_builtins/test1.py:10>>}
 ```
 
 #### > isfuture

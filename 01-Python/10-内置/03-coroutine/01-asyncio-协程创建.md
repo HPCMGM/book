@@ -257,3 +257,283 @@ return None
 * coro: `coroutine`, 协程, 一般为协程的入口函数.
 * debug: `bool`, 是否开启调试模式.
 
+# 2. 返回值
+
+## 2.1 < Task
+
+类似`future`对象, 用来控制协程的一些操作方式的对象. 非线程安全.  一个事件运行时 
+事件循环使用协同日程调度: 一个事件循环每次运行一个 Task 对象。而一个 Task 对象会等待一个 Future 对象完成，该事件循环会运行其他 Task、回调或执行 IO 操作。
+
+**此对象由系统自动构建无需手动操作**.
+
+### 2.1.1 取消任务
+
+#### > cancel
+
+取消协程任务
+
+```python
+def cancel(self):
+return None
+```
+
+#### > cancelled
+
+判断, 协程任务是否被取消
+
+**示例**
+
+```python
+import asyncio
+
+
+async def test_shield(i):
+    await asyncio.sleep(1)
+    print(i)
+    return i
+
+async def main():
+    print("hello")
+    try:
+        future = asyncio.ensure_future(test_shield(2))
+        future.cancel()
+        await future
+    except asyncio.CancelledError as e:
+        print(e)
+    print(future.cancelled())
+    await asyncio.sleep(3) # 注意这里要设置异步等待 否则协程因无IO切换而直接走向终止
+    print("world")
+
+asyncio.run(main())
+```
+
+输出
+
+```python
+hello
+
+True
+world
+```
+
+### 2.1.2 获取结果
+
+#### > result
+
+获取任务的执行结果. 如果非正常执行完成, 则会抛出异常
+
+```python
+def result(self):
+return result
+```
+
+#### > done
+
+判断, 协程任务是否已经执行完成
+
+#### > exception
+
+获取任务执行中内部存在的异常, 如果`cancel`后, 调用此函数会抛出异常
+
+```python
+def exception(self):
+return None/objectError
+```
+
+**示例**
+
+```python
+import asyncio
+
+
+async def test(i):
+    await asyncio.sleep(1)
+    print(i)
+    return i
+
+async def main():
+    print("hello")
+    try:
+        future2 = asyncio.ensure_future(test(3))
+        await future2
+        print(future2.exception())
+        print(future2.done())
+        print(future2.result())
+    except asyncio.CancelledError as e:
+        print(e)
+    await asyncio.sleep(3)
+    print("world")
+
+asyncio.run(main())
+```
+
+输出
+
+```python
+hello
+3
+None
+True
+3
+world
+```
+
+### 2.1.3 回调函数
+
+#### > add_done_callback
+
+当`task`执行完成后, 将`task`执行完成后, 会将`task`对象重新交给此函数继续执行, 可以添加多个函数.
+
+```python
+def add_done_callback(fn):
+return None
+```
+
+* fn: `function`: 需要添加的回调函数
+
+#### > remove_done_callback
+
+移除`task`被添加的回调函数. 并返回被移除的回调函数数量, 通常这个值为1, 除非你使用`add_done_callback`增加了多个回调函数
+
+```python
+def remove_done_callback(fn):
+return int
+```
+
+* fn: `funtion`: 需要移除的回调函数, 可以执行多次, 但是如果该函数不存在, 或者已经移除, 返回值的数量也会增加, 但是没有任何实际意义.
+
+**示例**
+
+```python
+import asyncio
+
+
+async def test(i):
+    await asyncio.sleep(1)
+    print(i)
+    return i
+
+async def main():
+    print("hello")
+    try:
+        future2 = asyncio.ensure_future(test(3))
+        fn = lambda x: print(3333333, x)
+        future2.add_done_callback(lambda x: print(1111111, x.result()))
+        future2.add_done_callback(lambda x: print(2222222, x))
+        future2.add_done_callback(fn)
+        future2.add_done_callback(fn)
+        future2.add_done_callback(fn)
+        print("remove function count: ", future2.remove_done_callback(fn))
+        await future2
+    except asyncio.CancelledError as e:
+        print(e)
+    await asyncio.sleep(3)
+    print("world")
+
+asyncio.run(main())
+```
+
+输出
+
+```python
+hello
+remove function count:  3
+3
+1111111 3
+2222222 <Task finished coro=<test() done, defined at E:/project/test/t_builtins/test1.py:9> result=3>
+world
+```
+
+### 2.1.4 栈对象
+
+#### > get_stack
+
+获取栈对象列表
+
+```python
+def get_stack(limit=None):
+return list
+```
+
+* limit: `int`, 栈对象中的行数限制.
+
+#### > print_stack
+
+打印栈对象异常时的信息.
+
+```python
+def print_stack(limit=None, file=None):
+return None
+```
+
+* limit: `int`, 栈对象中的行数限制
+* file: `file-object`, 需要将信息输出在哪种流对象中. 类似`traceback`
+
+**示例**
+
+```python
+import asyncio
+
+
+async def test(i):
+    await asyncio.sleep(1)
+    print(i)
+    return i
+
+async def main():
+    print("hello")
+    try:
+        future2 = asyncio.ensure_future(test(3))
+        print(future2.get_stack())
+        future2.print_stack()
+        await future2
+    except asyncio.CancelledError as e:
+        print(e)
+    await asyncio.sleep(3)
+    print("world")
+
+asyncio.run(main())
+```
+
+输出
+
+```python
+hello
+[<frame at 0x0000013523CC41F0, file 'E:/project/test/t_builtins/test1.py', line 9, code test>]
+Stack for <Task pending coro=<test() running at E:/project/test/t_builtins/test1.py:9>> (most recent call last):
+	File "E:/project/test/t_builtins/test1.py", line 9, in test
+		async def test(i):
+3
+world
+```
+
+### 2.1.5 任务信息
+
+#### > get_coro
+
+获取由`task`包装后的协程对象
+
+#### > get_name
+
+获取`task`的名称
+
+#### > set_name
+
+设置`task`名称
+
+## 2.2 < Future
+
+`Future`代表一个底层的可等待对象, 线程不安全. `Future`类似模块`concurrent.futures.Furure`, 主要区别为`asyncio.Future`可以直接用于协程操作, 而后者需要使用转换才能进行操作
+
+**此对象由系统自动构建无需手动操作**.
+
+### 2.2.1 取消任务
+
+#### > cancel
+
+
+
+#### > cancelled
+
+
+
