@@ -270,16 +270,21 @@ return None
 
 #### > cancel
 
-取消协程任务
+取消协程任务. 成功取消返回`True`否则`False`
 
 ```python
 def cancel(self):
-return None
+return bool
 ```
 
 #### > cancelled
 
 判断, 协程任务是否被取消
+
+```python
+def cancelled(self):
+return None
+```
 
 **示例**
 
@@ -295,12 +300,12 @@ async def test_shield(i):
 async def main():
     print("hello")
     try:
-        future = asyncio.ensure_future(test_shield(2))
-        future.cancel()
-        await future
+        task = asyncio.create_task(test_shield(2))
+        task.cancel()
+        await task
     except asyncio.CancelledError as e:
         print(e)
-    print(future.cancelled())
+    print(task.cancelled())
     await asyncio.sleep(3) # 注意这里要设置异步等待 否则协程因无IO切换而直接走向终止
     print("world")
 
@@ -354,11 +359,11 @@ async def test(i):
 async def main():
     print("hello")
     try:
-        future2 = asyncio.ensure_future(test(3))
-        await future2
-        print(future2.exception())
-        print(future2.done())
-        print(future2.result())
+        task = asyncio.create_task(test(3))
+        await task
+        print(task.exception())
+        print(task.done())
+        print(task.result())
     except asyncio.CancelledError as e:
         print(e)
     await asyncio.sleep(3)
@@ -416,15 +421,15 @@ async def test(i):
 async def main():
     print("hello")
     try:
-        future2 = asyncio.ensure_future(test(3))
+        task = asyncio.create_task(test(3))
         fn = lambda x: print(3333333, x)
-        future2.add_done_callback(lambda x: print(1111111, x.result()))
-        future2.add_done_callback(lambda x: print(2222222, x))
-        future2.add_done_callback(fn)
-        future2.add_done_callback(fn)
-        future2.add_done_callback(fn)
-        print("remove function count: ", future2.remove_done_callback(fn))
-        await future2
+        task.add_done_callback(lambda x: print(1111111, x.result()))
+        task.add_done_callback(lambda x: print(2222222, x))
+        task.add_done_callback(fn)
+        task.add_done_callback(fn)
+        task.add_done_callback(fn)
+        print("remove function count: ", task.remove_done_callback(fn))
+        await task
     except asyncio.CancelledError as e:
         print(e)
     await asyncio.sleep(3)
@@ -483,10 +488,10 @@ async def test(i):
 async def main():
     print("hello")
     try:
-        future2 = asyncio.ensure_future(test(3))
-        print(future2.get_stack())
-        future2.print_stack()
-        await future2
+        task = asyncio.create_task(test(3))
+        print(task.get_stack())
+        task.print_stack()
+        await task
     except asyncio.CancelledError as e:
         print(e)
     await asyncio.sleep(3)
@@ -511,29 +516,38 @@ world
 
 #### > get_coro
 
-获取由`task`包装后的协程对象
+获取由`task`包装后的协程对象. 
+
+```python
+def get_coro(self):
+return coroutine
+```
 
 #### > get_name
 
-获取`task`的名称
+获取`task`的名称. `asyncio Task `实现会在实例化期间生成一个默认名称。
+
+```python
+def get_name(self):
+return str
+```
 
 #### > set_name
 
 设置`task`名称
 
+```python
+def set_name(value):
+return None
+```
+
+* value: `any`, 可以为任意对象，它随后会被转换为字符串。
+
 ## 2.2 < Future
 
 `Future`代表一个底层的可等待对象, 线程不安全. `Future`类似模块`concurrent.futures.Furure`, 主要区别为`asyncio.Future`可以直接用于协程操作, 而后者需要使用转换才能进行操作
 
-**此对象由系统自动构建无需手动操作**.
-
-### 2.2.1 取消任务
-
-#### > cancel
-
-
-
-#### > cancelled
+**此对象, 拥有`Task`对象的属性和方法, 这里就不再赘述.**
 
 
 
