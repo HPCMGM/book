@@ -201,65 +201,109 @@ wait: 1s http://www.baidu.com11
 wait: 2s http://www.baidu.com22
 ```
 
-## 1.2 loop
+## 1.2 协程
 
-低层级函数可被用于获取、设置或创建事件循环
+协程可以直接调用, 类似生成器.
 
-### 1.2.1 监听事件
+#### > send
 
-#### > new_event_loop
-
-创建一个新的事件监听对象.
+向协程内部传递参数
 
 ```python
-def new_event_loop():
-return Loop
+def send(self, value):
+return coroutine
 ```
 
-#### > get_event_loop
+* value: `any`, 需要发送到内部的参数
 
-获取当前使用的事件循环对象. 如果不存在, 则会创建一个新的对象.
+**示例**
 
 ```python
-def get_event_loop():
-return Loop
+
+import time
+import types
+import asyncio
+
+@asyncio.coroutine
+def demo1():
+    yield time.sleep(1)
+    return "aa"
+
+@asyncio.coroutine
+def demo2():
+    time.sleep(1)
+    return "aa"
+
+@types.coroutine
+def demo3():
+    yield time.sleep(1)
+    return "aa"
+
+@types.coroutine
+def demo4():
+    time.sleep(1)
+    return "aa"
+
+
+async def demo_main():
+    param = await demo3()
+    return param
+
+
+d = demo_main()
+try:
+    d.send(None)
+    print("已发送")
+    d.send("dd")
+    print("报错")
+except StopIteration as e:
+    print(e.value)
 ```
 
-#### > set_event_loop
+#### > throw
 
-将`loop`设置为当前线程的事件监听对象.
+向协程中抛出异常
 
 ```python
-def set_event_loop(loop):
+def throw(self, typ, val, tb):
+return coroutine
+```
+
+* typ: `object`, 异常类
+* val: `args`, 异常信息
+* `tb`, `list`, 异常栈
+
+#### > close
+
+关闭协程任务
+
+```python
+def close(self):
 return None
 ```
 
-#### > get_running_loop
-
-获取当前线程中使用的事件监听对象, 如果没有将会引发异常.
+**示例**
 
 ```python
-def get_running_loop():
-return Loop
+# 终止协程时查看任务执行情况:
+async def send_request(t):
+    print("[INFO] get URI")
+    await asyncio.sleep()
+    print("[INFO] complete URI")
+
+tasks = [send_request(i) for i in range(4)]
+loop = asyncio.get_event_loop()
+try:
+    loop.run_until_complete(asyncio.wait(tasks))
+except KeyboardInterrupt as e:
+    all_tasks = asyncio.Task.all_tasks()
+    for task in all_tasks:
+        print("[INFO] Calcel task is {}".format(task.cancel()))
+    loop.stop()
+    loop.run_forever()
+finally:
+    loop.close()
 ```
-
-### 1.2.2 开启事件监听
-
-#### > run
-
-此函数用于管理 asyncio 事件循环, 总是会创建一个新的事件循环并在结束时关闭之。它应当被用作 `asyncio` 程序的主入口点，理想情况下应当只被调用一次。
-
-```python
-def run(coro, *, debug=False):
-return None
-```
-
-* coro: `coroutine`, 协程, 一般为协程的入口函数.
-* debug: `bool`, 是否开启调试模式.
-
-#### > run_until_complete
-
-
 
 # 2. 返回值
 
@@ -399,6 +443,27 @@ return None
 ```
 
 * fn: `function`: 需要添加的回调函数
+
+**示例**
+
+```python
+def callback(task):
+    """此函数默认接受一个参数"""
+    print("Result if function is {}".format(task.result()))
+    print("This function used by callback!")
+
+future.add_done_callback(callback)
+task.add_done_callback(callback)
+
+
+# 回调默认不允许传递参数的, 可以使用偏函数functools.partial扩充实现传递参数
+from functools import partial
+def callback(a, b, task):
+    print(a, b)
+
+future.add_done_callback(partial(callback, a, b))
+task.add_done_callback(partial(callback, a, b))
+```
 
 #### > remove_done_callback
 
