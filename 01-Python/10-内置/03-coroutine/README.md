@@ -11,6 +11,5 @@ async def main():
     print('world')
 
 asyncio.run(main())
-
 ```
 
