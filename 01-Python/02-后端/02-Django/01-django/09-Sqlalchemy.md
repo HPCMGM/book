@@ -19,7 +19,6 @@
     pip install django==2.0.0
     ```
 
-    
 
 ## 1.1 ORM框架
 
