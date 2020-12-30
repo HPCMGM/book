@@ -69,6 +69,7 @@ result = a_list[0].text   # 获取第一个节点的内容
 result = a_list[0].tag    # 获取第一个节点标签名(通过属性查找到标签名)
 
 result = etree.tostring   # 修复文档, 补齐缺失的标签
+result = lxml.html.clean.clean_html(str_content)  # 防止xxs注入, 一般用于富文本入库过滤
 ```
 
 **示例**
