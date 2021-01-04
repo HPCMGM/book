@@ -1,0 +1,43 @@
+# 1. 安装
+
+## 1.1 linux
+
+### 1.1.1 ubuntu
+
+* 安装依赖
+
+  ```bash
+  sudo apt-get install python-dev python-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
+  ```
+
+* 更新pip
+
+  ```bash
+  pip install --upgrade pip
+  ```
+
+* 安装
+
+  ```bash
+  sudo pip install scripy
+  ```
+
+## 1.2 windows
+
+* 安装twisted(需要使用wheel安装, 否则可能会报错缺少vc)
+
+  ```python
+  # 在此网站下载对应版本的twisted
+  http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
+  # 安装twisted
+  pip install .\Twisted-17.1.0-cp36-cp36m-win_amd64.whl
+  ```
+
+* 安装scrapy
+
+  ```python
+  pip install scrapy
+  ```
+
+  
+
