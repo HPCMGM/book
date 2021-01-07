@@ -437,7 +437,10 @@
       * [06-主从搭建](07-工具/02-SQL/02-Redis/06-主从搭建.md)
       * [07-集群搭建](07-工具/02-SQL/02-Redis/07-集群搭建.md)
       * [10-常见错误](07-工具/02-SQL/02-Redis/10-常见错误.md)
-    - 03 Mongo DB
+    - [03 Mongo DB](07-工具/02-SQL/03-MongoDB/README.md)
+      * [01-安装配置](07-工具/02-SQL/03-MongoDB/01-安装配置.md)
+      * [02-用户管理](07-工具/02-SQL/03-MongoDB/02-用户管理.md)
+      * [03-增删改查](07-工具/02-SQL/03-MongoDB/03-增删改查.md)
       * [10-常见错误](07-工具/02-SQL/03-MongoDB/10-常见错误.md)
     - [10 Navicat](07-工具/02-SQL/10-Navicat/README.md)
       * [01-安装](07-工具/02-SQL/10-Navicat/01-安装.md)
