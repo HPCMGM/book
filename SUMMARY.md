@@ -128,7 +128,9 @@
         * [06 Request](01-Python/02-后端/02-Django/01-django/06-Request.md)
         * [07 Response](01-Python/02-后端/02-Django/01-django/07-Response.md)
         * [08 Cookie Session](01-Python/02-后端/02-Django/01-django/08-CookieSession.md)
-        * [09 Sqlalchemy](01-Python/02-后端/02-Django/01-django/09-Sqlalchemy.md)
+        * [09-SQLAlchemy-关联操作](01-Python/02-后端/02-Django/01-django/09-SQLAlchemy-关联操作.md)
+        * [09-SQLAlchemy-基本字段](01-Python/02-后端/02-Django/01-django/09-SQLAlchemy-基本字段.md)
+        * [09-SQLAlchemy-查询操作](01-Python/02-后端/02-Django/01-django/09-SQLAlchemy-查询操作.md)
         * [10 CORS](01-Python/02-后端/02-Django/01-django/10-CORS.md)
         * [11 JWT](01-Python/02-后端/02-Django/01-django/11-JWT.md)
         * [12 Itsdangerous](01-Python/02-后端/02-Django/01-django/12-Itsdangerous.md)
@@ -498,10 +500,15 @@
       * [01-安装](07-工具/05-VersionControl/02-svn/01-安装.md)
       * [02-命令](07-工具/05-VersionControl/02-svn/02-命令.md)
       * [10-自建版本库](07-工具/05-VersionControl/02-svn/10-自建版本库.md)
+  - 06 CICD
+    - 01 Gitlab
+      * [01-安装gitlab](07-工具/06-CICD/01-Gitlab/01-安装gitlab.md)
+      * [02-安装runner](07-工具/06-CICD/01-Gitlab/02-安装runner.md)
   - 10 Note
     - 30 Gitbook
       * [01-安装](07-工具/10-Note/30-gitbook/01-安装.md)
       * [03-githup组合搭建blog](07-工具/10-Note/30-gitbook/03-githup组合搭建blog.md)
 - 08-临时文件
   * [01-django-orm坑](08-临时文件/01-django-orm坑.md)
-  * [02-django发送excel流对象](08-临时文件/02-django发送excel流对象.md)
+  * [02 Jenkins](08-临时文件/02-jenkins.md)
+  * [03-问题解答](08-临时文件/03-问题解答.md)
