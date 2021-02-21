@@ -96,5 +96,13 @@
    d????????? ? ? ? ?            ? hgfs 无法访问, 这重启即可
    ```
 
+9. 加入开机自启
+
+   ```shell
+   vim /etc/rc.d/rc.local
+   
+   # vmhgfs-fuse .host:/project /home/appgess/project -o nonempty -o allow_other &
+   ```
+
    
 

@@ -1,3 +1,39 @@
+# 1. CentOS 7
+
+## 1.1 在线安装
+
+### 1.1.1 依赖安装
+
+```shell
+yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite sqlite-devel readline-devel tk tk-devel gdbm gdbm-devel db4-devel libpcap-devel lzma xz xz-devel libuuid libuuid-devel libffi-devel
+yum -y install gcc
+```
+
+### 1.1.2 安装Python
+
+```shell
+./configure --prefix=/usr/local/python/python37 --enable-shared --enable-optimizations
+make -j 4
+make install
+
+cp libpython*.so.1.0 /usr/lib
+cp libpython*.so.1.0 /usr/lib64
+cp libpython*.so.1.0 /usr/local/lib 
+cp libpython*.so.1.0 /usr/local/lib64
+
+# vim /etc/profile
+# 增加
+# PATH=$PATH:/usr/local/python/python37/bin
+
+source /etc/profile
+```
+
+
+
+## 1.2 离线安装
+
+
+
 # 1.  依赖安装
 
 ## 1.1 在线安装
@@ -217,14 +253,6 @@ make install
   # 查找find / -name libffi.so.6, 将结果配置到LD_LIBRARY_PATH中
   export LD_LIBRARY_PATH=/usr/local/lib64
   ```
-
-#### 1.2.4.2 Python编译
-
-```bash
-
-```
-
-
 
 # 2. Python 安装
 
