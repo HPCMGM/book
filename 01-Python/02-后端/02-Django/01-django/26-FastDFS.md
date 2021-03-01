@@ -51,13 +51,13 @@ docker image pull delron/fastdfs
 ### 2.2.1 tracker运行
 
 ```python
-docker run -dti --network=host --name tracker -v /usr/data/fastdfs/tracker:/var/fdfs delron/fastdfs tracker
+docker run -dti --network=host --name tracker -v /home/appgess/Desktop/fastdfs/tracker:/var/fdfs delron/fastdfs tracker
 ```
 
 ### 2.2.2 storage运行
 
 ```python
-docker run -dti --network=host --name storage -e TRACKER_SERVER=10.0.0.12:22122 -v /usr/data/fastdfs/storage:/var/fdfs delron/fastdfs storage
+docker run -dti --network=host --name storage -e TRACKER_SERVER=10.0.0.13:22122 -v /home/appgess/Desktop/fastdfs/storage:/var/fdfs delron/fastdfs storage
 ```
 
 ## 2.3 使用

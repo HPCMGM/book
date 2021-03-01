@@ -174,6 +174,12 @@
     * [11 Selenium](01-Python/03-爬虫/11-selenium.md)
     * [12-scrapy-安装](01-Python/03-爬虫/12-scrapy-安装.md)
     * [13-scrapy-命令](01-Python/03-爬虫/13-scrapy-命令.md)
+  - 04-智能
+    - [01-算法](01-Python/04-智能/01-算法/01-算法.md)
+      * [03-栈与队列](01-Python/04-智能/01-算法/03-栈与队列.md)
+      * [04-排序算法](01-Python/04-智能/01-算法/04-排序算法.md)
+      * [05-查找算法](01-Python/04-智能/01-算法/05-查找算法.md)
+      * [06-树](01-Python/04-智能/01-算法/06-树.md)
   - [10-内置](01-Python/10-内置/README.md)
     - [01 Multiprocessing](01-Python/10-内置/01-multiprocessing/README.md)
       * [01-进程](01-Python/10-内置/01-multiprocessing/01-进程.md)
