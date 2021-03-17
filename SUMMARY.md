@@ -530,19 +530,21 @@
       * [03 Vagrantfile](07-工具/03-Virtual/10-Vagrant/03-Vagrantfile.md)
       * [05-网络映射](07-工具/03-Virtual/10-Vagrant/05-网络映射.md)
   - 04 Remote
-    - 07 SSH
-      * [01-安装](07-工具/04-Remote/07-SSH/01-安装.md)
-      * [02-sshd配置文件](07-工具/04-Remote/07-SSH/02-sshd配置文件.md)
-      * [03-ssh命令](07-工具/04-Remote/07-SSH/03-ssh命令.md)
-      * [04-scp命令](07-工具/04-Remote/07-SSH/04-scp命令.md)
-    - 08 FTP
-      * [01-安装](07-工具/04-Remote/08-FTP/01-安装.md)
-      * [02-FTP配置](07-工具/04-Remote/08-FTP/02-FTP配置.md)
-      * [03-FTP命令](07-工具/04-Remote/08-FTP/03-FTP命令.md)
-    - 20 Ansible
-      * [01-安装](07-工具/04-Remote/20-Ansible/01-安装.md)
-      * [02-ansible命令](07-工具/04-Remote/20-Ansible/02-ansible命令.md)
-      * [10-转移笔记](07-工具/04-Remote/20-Ansible/10-转移笔记.md)
+    - 01 SSH
+      * [01-安装](07-工具/04-Remote/01-SSH/01-安装.md)
+      * [02-sshd配置文件](07-工具/04-Remote/01-SSH/02-sshd配置文件.md)
+      * [03-ssh命令](07-工具/04-Remote/01-SSH/03-ssh命令.md)
+      * [04-scp命令](07-工具/04-Remote/01-SSH/04-scp命令.md)
+    - 02 FTP
+      * [01-安装](07-工具/04-Remote/02-FTP/01-安装.md)
+      * [02-FTP配置](07-工具/04-Remote/02-FTP/02-FTP配置.md)
+      * [03-FTP命令](07-工具/04-Remote/02-FTP/03-FTP命令.md)
+    - 03 Ansible
+      * [01-安装](07-工具/04-Remote/03-Ansible/01-安装.md)
+      * [02-ansible命令](07-工具/04-Remote/03-Ansible/02-ansible命令.md)
+      * [10-转移笔记](07-工具/04-Remote/03-Ansible/10-转移笔记.md)
+    - [04 Salt Stack](07-工具/04-Remote/04-SaltStack/README.md)
+      * [01-安装](07-工具/04-Remote/04-SaltStack/01-安装.md)
   - [05 Version Control](07-工具/05-VersionControl/README.md)
     - [01 Git](07-工具/05-VersionControl/01-git/README.md)
       * [01-安装](07-工具/05-VersionControl/01-git/01-安装.md)
