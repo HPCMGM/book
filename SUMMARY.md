@@ -545,6 +545,7 @@
       * [10-转移笔记](07-工具/04-Remote/03-Ansible/10-转移笔记.md)
     - [04 Salt Stack](07-工具/04-Remote/04-SaltStack/README.md)
       * [01-安装](07-工具/04-Remote/04-SaltStack/01-安装.md)
+      * [02-常用操作](07-工具/04-Remote/04-SaltStack/02-常用操作.md)
   - [05 Version Control](07-工具/05-VersionControl/README.md)
     - [01 Git](07-工具/05-VersionControl/01-git/README.md)
       * [01-安装](07-工具/05-VersionControl/01-git/01-安装.md)
