@@ -26,6 +26,8 @@ edges = (
 )
 
 g.add_edges_from(edges)
+nx.draw(g, with_labels=True, node_color="r")
+plt.show()
 ```
 
 输出
