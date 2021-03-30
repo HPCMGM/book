@@ -174,8 +174,11 @@
       * [01-request-爬虫](01-Python/03-爬虫/02-requests/01-request-爬虫.md)
     - 03 Scrapy
       * [01-安装](01-Python/03-爬虫/03-scrapy/01-安装.md)
-      * [02-基本命令](01-Python/03-爬虫/03-scrapy/02-基本命令.md)
-      * [03-响应解析](01-Python/03-爬虫/03-scrapy/03-响应解析.md)
+      * [02-基本操作](01-Python/03-爬虫/03-scrapy/02-基本操作.md)
+      * [03-配置文件](01-Python/03-爬虫/03-scrapy/03-配置文件.md)
+      * [04 Request](01-Python/03-爬虫/03-scrapy/04-request.md)
+      * [05 Response](01-Python/03-爬虫/03-scrapy/05-response.md)
+      * [06-解析](01-Python/03-爬虫/03-scrapy/06-解析.md)
     - [05-抓包](01-Python/03-爬虫/05-抓包/README.md)
       - 01 Chrome
         * [01-基本用法](01-Python/03-爬虫/05-抓包/01-chrome/01-基本用法.md)
@@ -553,6 +556,7 @@
       * [01-安装](07-工具/05-版本控制/01-git/01-安装.md)
       * [02-常用命令](07-工具/05-版本控制/01-git/02-常用命令.md)
       * [03-切换用户操作](07-工具/05-版本控制/01-git/03-切换用户操作.md)
+      * [04-git代理配置](07-工具/05-版本控制/01-git/04-git代理配置.md)
     - [02 Svn](07-工具/05-版本控制/02-svn/README.md)
       * [01-安装](07-工具/05-版本控制/02-svn/01-安装.md)
       * [02-命令](07-工具/05-版本控制/02-svn/02-命令.md)
@@ -561,6 +565,7 @@
     - 01 Gitlab
       * [01-安装gitlab](07-工具/06-DevOps/01-Gitlab/01-安装gitlab.md)
       * [02-安装runner](07-工具/06-DevOps/01-Gitlab/02-安装runner.md)
+    - [02 Jenkins](07-工具/06-DevOps/02-jenkins/README.md)
   - 07-消息队列
     - [01 Rabbit MQ](07-工具/07-消息队列/01-RabbitMQ/README.md)
   - 10 Note
@@ -582,4 +587,3 @@
     * [02-内置数据类型](10-常见面试题/01-Python基础知识/02-内置数据类型.md)
     * [03-多任务](10-常见面试题/01-Python基础知识/03-多任务.md)
     * [04-魔法方法的运用](10-常见面试题/01-Python基础知识/04-魔法方法的运用.md)
-* [Untitled](Untitled.md)
