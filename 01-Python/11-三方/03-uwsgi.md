@@ -55,5 +55,7 @@ pidfile=uwsgi.pid
 daemonize=uwsgi.log
 # 指定依赖的虚拟环境
 virtualenv=/home/python/.virtualenvs/py3_django_1.11
+
+uwsgi添加虚拟环境时  需要的路径指向为: bin/python之前  /home/appgess/.virtualenvs/test
 ```
 
