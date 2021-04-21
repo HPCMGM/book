@@ -171,16 +171,20 @@
       * [09 Jsonpath](01-Python/03-爬虫/01-基础/09-jsonpath.md)
       * [11 Selenium](01-Python/03-爬虫/01-基础/11-selenium.md)
     - 02 Requests
-      * [01-request-爬虫](01-Python/03-爬虫/02-requests/01-request-爬虫.md)
+      * [01 Request](01-Python/03-爬虫/02-requests/01-request.md)
+      * [02 Response](01-Python/03-爬虫/02-requests/02-response.md)
+      * [03 Cookies](01-Python/03-爬虫/02-requests/03-cookies.md)
     - 03 Scrapy
       * [01-安装](01-Python/03-爬虫/03-scrapy/01-安装.md)
       * [02-基本操作](01-Python/03-爬虫/03-scrapy/02-基本操作.md)
       * [03-配置文件](01-Python/03-爬虫/03-scrapy/03-配置文件.md)
       * [04 Request](01-Python/03-爬虫/03-scrapy/04-request.md)
+      * [04-钩子函数](01-Python/03-爬虫/03-scrapy/04-钩子函数.md)
       * [05 Response](01-Python/03-爬虫/03-scrapy/05-response.md)
-      * [06-解析](01-Python/03-爬虫/03-scrapy/06-解析.md)
+      * [06 Parse](01-Python/03-爬虫/03-scrapy/06-parse.md)
       * [07 Pipeline](01-Python/03-爬虫/03-scrapy/07-pipeline.md)
       * [08 Crawlsplider](01-Python/03-爬虫/03-scrapy/08-crawlsplider.md)
+      * [09-scrapyd部署](01-Python/03-爬虫/03-scrapy/09-scrapyd部署.md)
       * [12-反爬-身份伪造](01-Python/03-爬虫/03-scrapy/12-反爬-身份伪造.md)
       * [13-反爬-JS破解](01-Python/03-爬虫/03-scrapy/13-反爬-JS破解.md)
       * [14-反爬-IP防封](01-Python/03-爬虫/03-scrapy/14-反爬-IP防封.md)
@@ -190,10 +194,6 @@
       * [18-框架-分布式](01-Python/03-爬虫/03-scrapy/18-框架-分布式.md)
       * [19-框架-主从分离](01-Python/03-爬虫/03-scrapy/19-框架-主从分离.md)
       * [20-框架-增量抓取](01-Python/03-爬虫/03-scrapy/20-框架-增量抓取.md)
-    - [05-抓包](01-Python/03-爬虫/05-抓包/README.md)
-      - 01 Chrome
-        * [01-基本用法](01-Python/03-爬虫/05-抓包/01-chrome/01-基本用法.md)
-        * [02-拓展插件](01-Python/03-爬虫/05-抓包/01-chrome/02-拓展插件.md)
   - 04-数据
     - [01-结构](01-Python/04-数据/01-结构/README.md)
       * [01-顺序表](01-Python/04-数据/01-结构/01-顺序表.md)
@@ -471,10 +471,6 @@
     - 09 LVS
       * [01-安装](07-工具/01-代理/09-LVS/01-安装.md)
       * [02-搭建LVS](07-工具/01-代理/09-LVS/02-搭建LVS.md)
-    - 10 Supervisord
-      * [01-安装](07-工具/01-代理/10-Supervisord/01-安装.md)
-      * [02-命令操作](07-工具/01-代理/10-Supervisord/02-命令操作.md)
-      * [03-配置文件](07-工具/01-代理/10-Supervisord/03-配置文件.md)
     - 11 Open VPN
       * [01-搭建](07-工具/01-代理/11-OpenVPN/01-搭建.md)
     - 12 SSR
@@ -576,14 +572,22 @@
     - 01 Gitlab
       * [01-安装gitlab](07-工具/06-DevOps/01-Gitlab/01-安装gitlab.md)
       * [02-安装runner](07-工具/06-DevOps/01-Gitlab/02-安装runner.md)
-    - [02 Jenkins](07-工具/06-DevOps/02-jenkins/README.md)
+    - [02 Jenkins](07-工具/06-DevOps/02-Jenkins/README.md)
   - 07-消息队列
     - [01 Rabbit MQ](07-工具/07-消息队列/01-RabbitMQ/README.md)
-  - 08-抓包
-    - 01 Fiddler
-      * [01-简单使用](07-工具/08-抓包/01-Fiddler/01-简单使用.md)
+  - [08-抓包](07-工具/08-抓包/README.md)
+    - 01 Chrome
+      * [01-基本用法](07-工具/08-抓包/01-Chrome/01-基本用法.md)
+      * [02-拓展插件](07-工具/08-抓包/01-Chrome/02-拓展插件.md)
     - 02 Charles
       * [01-简单使用](07-工具/08-抓包/02-Charles/01-简单使用.md)
+    - 03 Fiddler
+      * [01-简单使用](07-工具/08-抓包/03-Fiddler/01-简单使用.md)
+  - 09-进程守护
+    - 01 Supervisord
+      * [01-安装](07-工具/09-进程守护/01-Supervisord/01-安装.md)
+      * [02-命令操作](07-工具/09-进程守护/01-Supervisord/02-命令操作.md)
+      * [03-配置文件](07-工具/09-进程守护/01-Supervisord/03-配置文件.md)
   - 10 Note
     - 30 Gitbook
       * [01-安装](07-工具/10-Note/30-gitbook/01-安装.md)
